@@ -3,7 +3,6 @@ import { FcGoogle } from "react-icons/fc";
 import useAuth from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { TbFidgetSpinner } from "react-icons/tb";
-import axios from "axios";
 import { imageUpload } from "../../api/utils";
 
 const SignUp = () => {
@@ -19,12 +18,9 @@ const SignUp = () => {
     const password = form.password.value;
 
     const image = form.image.files[0];
-    
-
-    // send image to imgbb
+  
+    //1. Send image to imgbb
     const photoURL = await imageUpload(image);
-
-    
 
     try {
       //2. User Registration
