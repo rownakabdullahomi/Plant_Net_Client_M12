@@ -14,7 +14,7 @@ const PlantDetails = () => {
   let [isOpen, setIsOpen] = useState(false);
 
   const {
-    data: plant = [],
+    data: plant = {},
     isLoading,
     refetch,
   } = useQuery({
@@ -107,7 +107,7 @@ const PlantDetails = () => {
           </div>
           <hr className="my-6" />
 
-          <PurchaseModal closeModal={closeModal} isOpen={isOpen} plant={plant}/>
+          <PurchaseModal closeModal={closeModal} isOpen={isOpen} plant={plant} refetch={refetch}/>
 
           <div className="md:col-span-3 order-first md:order-last mb-10">
             {/* RoomReservation */}
